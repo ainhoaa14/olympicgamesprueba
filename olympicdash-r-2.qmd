@@ -40,7 +40,7 @@ olympics <- olympics_full |>
 
 ## Column - Medals by sport and year
 
-### Row - Medals by sport {height=60%}
+### Row - Medals by sport {height="60%"}
 
 ```{r}
 #| label: medals-by-sport
@@ -71,7 +71,7 @@ olympics |>
   )
 ```
 
-### Row - Medals by year {height=40%}
+### Row - Medals by year {height="40%"}
 
 ```{r}
 #| label: medals-by-year

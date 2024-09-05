@@ -39,9 +39,9 @@ summer_olympics <- olympics |>
   filter(season == "Summer")
 ```
 
-## Column - Medals by sport and year {width=65%}
+## Column - Medals by sport and year {width="65%"}
 
-### Row - Medals by sport {height=60%}
+### Row - Medals by sport {height="60%"}
 
 ```{r}
 #| label: summer-medals-by-sport
@@ -71,7 +71,7 @@ summer_olympics |>
   )
 ```
 
-### Row - Medals by year {height=40%}
+### Row - Medals by year {height="40%"}
 
 ::: {.card title="Medals by year"}
 Due to World War II, no olympic games were held in 1940 and 1944.
@@ -101,9 +101,9 @@ summer_olympics |>
 ```
 :::
 
-## Column - Medals by country {width=35%}
+## Column - Medals by country {width="35%"}
 
-### Row - Value boxes {height=30%}
+### Row - Value boxes {height="30%"}
 
 ```{r}
 #| label: summer-calculate-most-medals
@@ -124,7 +124,7 @@ summer_most_bronzes <- summer_olympics |>
 ```
 
 ::: {.valuebox icon="award-fill" color="#d4af37"}
-Most golds: 
+Most golds:
 
 `{r} summer_most_golds$n`
 
@@ -132,7 +132,7 @@ Most golds:
 :::
 
 ::: {.valuebox icon="award-fill" color="#c0c0c0"}
-Most silvers: 
+Most silvers:
 
 `{r} summer_most_silvers$n`
 
@@ -140,14 +140,14 @@ Most silvers:
 :::
 
 ::: {.valuebox icon="award-fill" color="#cd7f32"}
-Most bronzes: 
+Most bronzes:
 
 `{r} summer_most_bronzes$n`
 
 `{r} as.character(summer_most_bronzes$team)`
 :::
 
-### Row - Tabsets of tables {height=70% .tabset}
+### Row - Tabsets of tables {.tabset height="70%"}
 
 ::: {.card title="Top 30 total medals"}
 Teams sorted in descending order of total medals.
@@ -199,9 +199,9 @@ winter_olympics <- olympics |>
   filter(season == "Winter")
 ```
 
-## Column - Medals by sport and year {width=65%}
+## Column - Medals by sport and year {width="65%"}
 
-### Row - Medals by sport {height=60%}
+### Row - Medals by sport {height="60%"}
 
 ```{r}
 #| label: winter-medals-by-sport
@@ -230,7 +230,7 @@ winter_olympics |>
   )
 ```
 
-### Row - Medals by year {height=40%}
+### Row - Medals by year {height="40%"}
 
 ::: {.card title="Medals by year"}
 Due to World War II, no olympic games were held in 1940 and 1944.
@@ -261,9 +261,9 @@ winter_olympics |>
 ```
 :::
 
-## Column - Medals by country {width=35%}
+## Column - Medals by country {width="35%"}
 
-### Row - Value boxes {height=30%}
+### Row - Value boxes {height="30%"}
 
 ```{r}
 #| label: winter-calculate-most-medals
@@ -284,7 +284,7 @@ winter_most_bronzes <- winter_olympics |>
 ```
 
 ::: {.valuebox icon="award-fill" color="#d4af37"}
-Most golds: 
+Most golds:
 
 `{r} winter_most_golds$n`
 
@@ -292,7 +292,7 @@ Most golds:
 :::
 
 ::: {.valuebox icon="award-fill" color="#c0c0c0"}
-Most silvers: 
+Most silvers:
 
 `{r} winter_most_silvers$n`
 
@@ -300,14 +300,14 @@ Most silvers:
 :::
 
 ::: {.valuebox icon="award-fill" color="#cd7f32"}
-Most bronzes: 
+Most bronzes:
 
 `{r} winter_most_bronzes$n`
 
 `{r} as.character(winter_most_bronzes$team)`
 :::
 
-### Row - Tabsets of tables {height=70% .tabset}
+### Row - Tabsets of tables {.tabset height="70%"}
 
 ::: {.card title="Top 30 total medals"}
 Teams sorted in descending order of total medals.
@@ -332,6 +332,7 @@ winter_olympics |>
 
 ::: {.card title="Bottom 30 total medals"}
 Teams sorted in ascending order of total medals.
+
 ```{r}
 #| label: winter-bottom-30-total-medals
 winter_olympics |>

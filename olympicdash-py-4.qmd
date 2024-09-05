@@ -45,9 +45,9 @@ summer_olympics = olympics[(olympics["season"] == "Summer")]
 summer_olympics.reset_index(drop=True, inplace=True)
 ```
 
-## Column - Medals by sport and year {width=65%}
+## Column - Medals by sport and year {width="65%"}
 
-### Row - Medals by sport {height=60%}
+### Row - Medals by sport {height="60%"}
 
 ```{python}
 #| label: summer-medals-by-sport
@@ -89,7 +89,7 @@ summer_olympics["sport"] = summer_olympics["sport"].cat.reorder_categories(new_o
 )
 ```
 
-### Row - Medals by year {height=40%}
+### Row - Medals by year {height="40%"}
 
 ::: {.card title="Medals by year"}
 Due to World War II, no olympic games were held in 1940 and 1944.
@@ -127,9 +127,9 @@ summer_olympics_count = summer_olympics.groupby(["year", "medal"], observed=True
 ```
 :::
 
-## Column - Medals by country {width=35%}
+## Column - Medals by country {width="35%"}
 
-### Row - Value boxes {height=30%}
+### Row - Value boxes {height="30%"}
 
 ```{python}
 #| label: summer-calculate-most-medals
@@ -160,7 +160,7 @@ count_most_bronze_medals = bronze_medal_counts.max()
 ```
 
 ::: {.valuebox icon="award-fill" color="#d4af37"}
-Most golds: 
+Most golds:
 
 `{python} str(count_most_gold_medals)`
 
@@ -168,7 +168,7 @@ Most golds:
 :::
 
 ::: {.valuebox icon="award-fill" color="#c0c0c0"}
-Most silvers: 
+Most silvers:
 
 `{python} str(count_most_silver_medals)`
 
@@ -176,14 +176,14 @@ Most silvers:
 :::
 
 ::: {.valuebox icon="award-fill" color="#cd7f32"}
-Most bronzes: 
+Most bronzes:
 
 `{python} str(count_most_bronze_medals)`
 
 `{python} most_bronze_medals`
 :::
 
-### Row - Tabsets of tables {height=70% .tabset}
+### Row - Tabsets of tables {.tabset height="70%"}
 
 ```{python}
 #| label: summer-team-total-medals
@@ -256,9 +256,9 @@ winter_olympics = olympics[(olympics["season"] == "Winter")]
 winter_olympics.reset_index(drop=True, inplace=True)
 ```
 
-## Column - Medals by sport and year {width=65%}
+## Column - Medals by sport and year {width="65%"}
 
-### Row - Medals by sport {height=60%}
+### Row - Medals by sport {height="60%"}
 
 ```{python}
 #| label: winter-medals-by-sport
@@ -300,7 +300,7 @@ winter_olympics["sport"] = winter_olympics["sport"].cat.reorder_categories(new_o
 )
 ```
 
-### Row - Medals by year {height=40%}
+### Row - Medals by year {height="40%"}
 
 ::: {.card title="Medals by year"}
 Due to World War II, no olympic games were held in 1940 and 1944.
@@ -337,9 +337,9 @@ winter_olympics_count = winter_olympics.groupby(["year", "medal"], observed=True
 ```
 :::
 
-## Column - Medals by country {width=35%}
+## Column - Medals by country {width="35%"}
 
-### Row - Value boxes {height=30%}
+### Row - Value boxes {height="30%"}
 
 ```{python}
 #| label: winter-calculate-most-medals
@@ -370,7 +370,7 @@ count_most_bronze_medals = bronze_medal_counts.max()
 ```
 
 ::: {.valuebox icon="award-fill" color="#d4af37"}
-Most golds: 
+Most golds:
 
 `{python} str(count_most_gold_medals)`
 
@@ -378,7 +378,7 @@ Most golds:
 :::
 
 ::: {.valuebox icon="award-fill" color="#c0c0c0"}
-Most silvers: 
+Most silvers:
 
 `{python} str(count_most_silver_medals)`
 
@@ -386,14 +386,14 @@ Most silvers:
 :::
 
 ::: {.valuebox icon="award-fill" color="#cd7f32"}
-Most bronzes: 
+Most bronzes:
 
 `{python} str(count_most_bronze_medals)`
 
 `{python} most_bronze_medals`
 :::
 
-### Row - Tabsets of tables {height=70% .tabset}
+### Row - Tabsets of tables {.tabset height="70%"}
 
 ```{python}
 #| label: winter-team-total-medals
