@@ -9,7 +9,7 @@
         "format: html\n",
         "---"
       ],
-      "id": "a5fc3ddd"
+      "id": "e89a4c15"
     },
     {
       "cell_type": "code",
@@ -60,7 +60,7 @@
       "source": [
         "## Medals by sport\n"
       ],
-      "id": "347b25ea"
+      "id": "f954d5e9"
     },
     {
       "cell_type": "code",
@@ -95,7 +95,7 @@
         "    )\n",
         ")"
       ],
-      "id": "f5989176",
+      "id": "45ebd02e",
       "execution_count": null,
       "outputs": []
     },
@@ -105,7 +105,7 @@
       "source": [
         "## Medals by year\n"
       ],
-      "id": "0990ec8a"
+      "id": "d235201c"
     },
     {
       "cell_type": "code",
@@ -132,7 +132,7 @@
         "    )\n",
         ")"
       ],
-      "id": "72a989e2",
+      "id": "262b4401",
       "execution_count": null,
       "outputs": []
     },
@@ -142,7 +142,7 @@
       "source": [
         "## Medals by country\n"
       ],
-      "id": "e5abbd87"
+      "id": "a1cda28e"
     },
     {
       "cell_type": "code",
@@ -171,7 +171,7 @@
         "    gt.GT(olympics_pivot)\n",
         ")"
       ],
-      "id": "70bfe394",
+      "id": "4f2a788e",
       "execution_count": null,
       "outputs": []
     }

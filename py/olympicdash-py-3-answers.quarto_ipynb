@@ -11,11 +11,14 @@
         "    orientation: columns\n",
         "    nav-buttons: [github]\n",
         "    github: https://github.com/posit-conf-2024/olympicdash\n",
+        "    theme:\n",
+        "      - sketchy\n",
+        "      - style/olympicdash.scss\n",
         "logo: images/olympics-logo.svg\n",
         "logo-alt: \"Olympics logo with multicolored circles.\"\n",
         "---"
       ],
-      "id": "637b2dd1"
+      "id": "6eb72cc1"
     },
     {
       "cell_type": "code",
@@ -35,7 +38,7 @@
       "metadata": {},
       "source": [
         "#| label: load-data\n",
-        "olympics_full = pd.read_csv(\"data/olympics.csv\", low_memory = False)"
+        "olympics_full = pd.read_csv(\"../data/olympics.csv\", low_memory = False)"
       ],
       "id": "load-data",
       "execution_count": null,
@@ -66,7 +69,7 @@
       "source": [
         "# 🌞 Summer Olympics\n"
       ],
-      "id": "188e024e"
+      "id": "cc70e569"
     },
     {
       "cell_type": "code",
@@ -84,11 +87,11 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "## Column - Medals by sport and year {width=\"65%\"}\n",
+        "## Column - Medals by sport and year {width=65%}\n",
         "\n",
-        "### Row - Medals by sport {height=\"60%\"}\n"
+        "### Row - Medals by sport {height=60%}\n"
       ],
-      "id": "2148a528"
+      "id": "05246673"
     },
     {
       "cell_type": "code",
@@ -115,6 +118,9 @@
         "    geom_bar() +\n",
         "    coord_flip() +\n",
         "    guides(fill = guide_legend(reverse = True)) +\n",
+        "    scale_fill_manual(\n",
+        "        values = {\"Gold\":\"#d4af37\", \"Silver\":\"#c0c0c0\", \"Bronze\":\"#cd7f32\"}\n",
+        "    ) +  \n",
         "    labs(\n",
         "        x = \"\",\n",
         "        y = \"\",\n",
@@ -126,7 +132,7 @@
         "        legend_position_inside = (0.9, 0.2),\n",
         "        legend_direction = \"horizontal\",\n",
         "        legend_background = element_rect(fill = \"white\", color = \"gray\"),\n",
-        "        figure_size = (10, 6.18)\n",
+        "        figure_size = (8, 3)\n",
         "    )\n",
         ")"
       ],
@@ -138,12 +144,12 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "### Row - Medals by year {height=\"40%\"}\n",
+        "### Row - Medals by year {height=40%}\n",
         "\n",
         "::: {.card title=\"Medals by year\"}\n",
         "Due to World War II, no olympic games were held in 1940 and 1944.\n"
       ],
-      "id": "499e7689"
+      "id": "c728cee6"
     },
     {
       "cell_type": "code",
@@ -158,19 +164,25 @@
         "\n",
         "# Plot\n",
         "(\n",
-        "    ggplot(summer_olympics_count, aes(x = \"year\", y = \"n\", color = \"medal\")) +\n",
-        "    geom_point(size = 0.5) +\n",
-        "    geom_line() +\n",
+        "    ggplot(summer_olympics_count, aes(x = \"year\", y = \"n\")) +\n",
+        "    geom_line(aes(color = \"medal\"), size = 0.5) +\n",
+        "    geom_point(aes(fill = \"medal\"), size = 2, color = \"white\") + \n",
         "    guides(color = guide_legend(reverse = True)) + \n",
-        "    scale_x_continuous(breaks = range(1896, 2020, 8)) +\n",
-        "    labs(x = \"Year\", y = \"\", color = \"Medal\") +\n",
-        "    theme_minimal() +\n",
+        "    scale_x_continuous(breaks = range(1896, 2020, 8)) + \n",
+        "    scale_color_manual(\n",
+        "        values = {\"Gold\":\"#d4af37\", \"Silver\":\"#c0c0c0\", \"Bronze\":\"#cd7f32\"}\n",
+        "    ) + \n",
+        "    scale_fill_manual(\n",
+        "        values = {\"Gold\":\"#d4af37\", \"Silver\":\"#c0c0c0\", \"Bronze\":\"#cd7f32\"}\n",
+        "    ) + \n",
+        "    labs(x = \"Year\", y = \"\", color = \"Medal\", fill = \"Medal\") + \n",
+        "    theme_minimal() + \n",
         "    theme(\n",
         "        legend_position = \"inside\",\n",
         "        legend_position_inside = (0.9, 0.2),\n",
         "        legend_direction = \"horizontal\",\n",
         "        legend_background = element_rect(fill = \"white\", color = \"gray\"),\n",
-        "        figure_size = (10, 3)\n",
+        "        figure_size = (11, 2)\n",
         "    )\n",
         ")"
       ],
@@ -184,11 +196,11 @@
       "source": [
         ":::\n",
         "\n",
-        "## Column - Medals by country {width=\"35%\"}\n",
+        "## Column - Medals by country {width=35%}\n",
         "\n",
-        "### Row - Value boxes {height=\"30%\"}\n"
+        "### Row - Value boxes {height=30%}\n"
       ],
-      "id": "acea70ba"
+      "id": "e3307c07"
     },
     {
       "cell_type": "code",
@@ -229,7 +241,7 @@
       "metadata": {},
       "source": [
         "::: {.valuebox icon=\"award-fill\" color=\"#d4af37\"}\n",
-        "Most golds:\n",
+        "Most golds: \n",
         "\n",
         "`{python} str(count_most_gold_medals)`\n",
         "\n",
@@ -237,7 +249,7 @@
         ":::\n",
         "\n",
         "::: {.valuebox icon=\"award-fill\" color=\"#c0c0c0\"}\n",
-        "Most silvers:\n",
+        "Most silvers: \n",
         "\n",
         "`{python} str(count_most_silver_medals)`\n",
         "\n",
@@ -245,24 +257,22 @@
         ":::\n",
         "\n",
         "::: {.valuebox icon=\"award-fill\" color=\"#cd7f32\"}\n",
-        "Most bronzes:\n",
+        "Most bronzes: \n",
         "\n",
         "`{python} str(count_most_bronze_medals)`\n",
         "\n",
         "`{python} most_bronze_medals`\n",
         ":::\n",
         "\n",
-        "### Row - Tabsets of tables {.tabset height=\"70%\"}\n"
+        "### Row - Tabsets of tables {height=70% .tabset}\n"
       ],
-      "id": "e8f40524"
+      "id": "e29111df"
     },
     {
       "cell_type": "code",
-      "metadata": {
-        "title": "Medals by country"
-      },
+      "metadata": {},
       "source": [
-        "#| label: summer-medals-by-country\n",
+        "#| label: summer-team-total-medals\n",
         "\n",
         "# Count the occurrences of each medal per team\n",
         "summer_olympics_count = summer_olympics.groupby([\"team\", \"medal\"]).size().reset_index(name=\"n\")\n",
@@ -295,7 +305,7 @@
         "summer_olympics_sorted_ascending_bottom30 = summer_olympics_sorted_ascending.head(30)\n",
         "summer_olympics_sorted_ascending_bottom30.reset_index(drop=True, inplace=True)"
       ],
-      "id": "summer-medals-by-country",
+      "id": "summer-team-total-medals",
       "execution_count": null,
       "outputs": []
     },
@@ -306,7 +316,7 @@
         "::: {.card title=\"Top 30 total medals\"}\n",
         "Teams sorted in descending order of total medals.\n"
       ],
-      "id": "bfc81647"
+      "id": "473b0369"
     },
     {
       "cell_type": "code",
@@ -333,7 +343,7 @@
         "::: {.card title=\"Bottom 30 total medals\"}\n",
         "Teams sorted in ascending order of total medals.\n"
       ],
-      "id": "4f191564"
+      "id": "852586fd"
     },
     {
       "cell_type": "code",
@@ -359,7 +369,7 @@
         "\n",
         "# ❄️ Winter Olympics\n"
       ],
-      "id": "30e894fe"
+      "id": "29c36dcf"
     },
     {
       "cell_type": "code",
@@ -377,11 +387,11 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "## Column - Medals by sport and year {width=\"65%\"}\n",
+        "## Column - Medals by sport and year {width=65%}\n",
         "\n",
-        "### Row - Medals by sport {height=\"60%\"}\n"
+        "### Row - Medals by sport {height=60%}\n"
       ],
-      "id": "5a27154e"
+      "id": "3db64429"
     },
     {
       "cell_type": "code",
@@ -408,6 +418,9 @@
         "    geom_bar() +\n",
         "    coord_flip() +\n",
         "    guides(fill = guide_legend(reverse = True)) +\n",
+        "    scale_fill_manual(\n",
+        "        values = {\"Gold\":\"#d4af37\", \"Silver\":\"#c0c0c0\", \"Bronze\":\"#cd7f32\"}\n",
+        "    ) +  \n",
         "    labs(\n",
         "        x = \"\",\n",
         "        y = \"\",\n",
@@ -419,7 +432,7 @@
         "        legend_position_inside = (0.9, 0.2),\n",
         "        legend_direction = \"horizontal\",\n",
         "        legend_background = element_rect(fill = \"white\", color = \"gray\"),\n",
-        "        figure_size = (10, 6.18)\n",
+        "        figure_size = (8, 3)\n",
         "    )\n",
         ")"
       ],
@@ -431,12 +444,12 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "### Row - Medals by year {height=\"40%\"}\n",
+        "### Row - Medals by year {height=40%}\n",
         "\n",
         "::: {.card title=\"Medals by year\"}\n",
         "Due to World War II, no olympic games were held in 1940 and 1944.\n"
       ],
-      "id": "951a5ff6"
+      "id": "8a5957e9"
     },
     {
       "cell_type": "code",
@@ -449,19 +462,25 @@
         "\n",
         "# Plot\n",
         "(\n",
-        "    ggplot(winter_olympics_count, aes(x = \"year\", y = \"n\", color = \"medal\")) +\n",
-        "    geom_point(size = 0.5) +\n",
-        "    geom_line() +\n",
+        "    ggplot(winter_olympics_count, aes(x = \"year\", y = \"n\")) +\n",
+        "    geom_line(aes(color = \"medal\"), size = 0.5) +\n",
+        "    geom_point(aes(fill = \"medal\"), size = 2, color = \"white\") + \n",
         "    guides(color = guide_legend(reverse = True)) + \n",
-        "    scale_x_continuous(breaks = range(1896, 2020, 8)) +\n",
-        "    labs(x = \"Year\", y = \"\", color = \"Medal\") +\n",
-        "    theme_minimal() +\n",
+        "    scale_x_continuous(breaks = range(1896, 2020, 8)) + \n",
+        "    scale_color_manual(\n",
+        "        values = {\"Gold\":\"#d4af37\", \"Silver\":\"#c0c0c0\", \"Bronze\":\"#cd7f32\"}\n",
+        "    ) + \n",
+        "    scale_fill_manual(\n",
+        "        values = {\"Gold\":\"#d4af37\", \"Silver\":\"#c0c0c0\", \"Bronze\":\"#cd7f32\"}\n",
+        "    ) + \n",
+        "    labs(x = \"Year\", y = \"\", color = \"Medal\", fill = \"Medal\") + \n",
+        "    theme_minimal() + \n",
         "    theme(\n",
         "        legend_position = \"inside\",\n",
         "        legend_position_inside = (0.9, 0.2),\n",
         "        legend_direction = \"horizontal\",\n",
         "        legend_background = element_rect(fill = \"white\", color = \"gray\"),\n",
-        "        figure_size = (10, 3)\n",
+        "        figure_size = (11, 2)\n",
         "    )\n",
         ")"
       ],
@@ -475,11 +494,11 @@
       "source": [
         ":::\n",
         "\n",
-        "## Column - Medals by country {width=\"35%\"}\n",
+        "## Column - Medals by country {width=35%}\n",
         "\n",
-        "### Row - Value boxes {height=\"30%\"}\n"
+        "### Row - Value boxes {height=30%}\n"
       ],
-      "id": "85a3d3a2"
+      "id": "cb7b3670"
     },
     {
       "cell_type": "code",
@@ -520,7 +539,7 @@
       "metadata": {},
       "source": [
         "::: {.valuebox icon=\"award-fill\" color=\"#d4af37\"}\n",
-        "Most golds:\n",
+        "Most golds: \n",
         "\n",
         "`{python} str(count_most_gold_medals)`\n",
         "\n",
@@ -528,7 +547,7 @@
         ":::\n",
         "\n",
         "::: {.valuebox icon=\"award-fill\" color=\"#c0c0c0\"}\n",
-        "Most silvers:\n",
+        "Most silvers: \n",
         "\n",
         "`{python} str(count_most_silver_medals)`\n",
         "\n",
@@ -536,24 +555,22 @@
         ":::\n",
         "\n",
         "::: {.valuebox icon=\"award-fill\" color=\"#cd7f32\"}\n",
-        "Most bronzes:\n",
+        "Most bronzes: \n",
         "\n",
         "`{python} str(count_most_bronze_medals)`\n",
         "\n",
         "`{python} most_bronze_medals`\n",
         ":::\n",
         "\n",
-        "### Row - Tabsets of tables {.tabset height=\"70%\"}\n"
+        "### Row - Tabsets of tables {height=70% .tabset}\n"
       ],
-      "id": "c8b34c84"
+      "id": "b3c336df"
     },
     {
       "cell_type": "code",
-      "metadata": {
-        "title": "Medals by country"
-      },
+      "metadata": {},
       "source": [
-        "#| label: winter-medals-by-country\n",
+        "#| label: winter-team-total-medals\n",
         "\n",
         "# Count the occurrences of each medal per team\n",
         "winter_olympics_count = winter_olympics.groupby([\"team\", \"medal\"]).size().reset_index(name=\"n\")\n",
@@ -586,7 +603,7 @@
         "winter_olympics_sorted_ascending_bottom30 = winter_olympics_sorted_ascending.head(30)\n",
         "winter_olympics_sorted_ascending_bottom30.reset_index(drop=True, inplace=True)"
       ],
-      "id": "winter-medals-by-country",
+      "id": "winter-team-total-medals",
       "execution_count": null,
       "outputs": []
     },
@@ -597,7 +614,7 @@
         "::: {.card title=\"Top 30 total medals\"}\n",
         "Teams sorted in descending order of total medals.\n"
       ],
-      "id": "7a35165b"
+      "id": "d7d4fa24"
     },
     {
       "cell_type": "code",
@@ -624,7 +641,7 @@
         "::: {.card title=\"Bottom 30 total medals\"}\n",
         "Teams sorted in ascending order of total medals.\n"
       ],
-      "id": "1273cee1"
+      "id": "ebdb3fd8"
     },
     {
       "cell_type": "code",
@@ -648,7 +665,7 @@
       "source": [
         ":::"
       ],
-      "id": "bdf7e951"
+      "id": "fb69a7bb"
     }
   ],
   "metadata": {
