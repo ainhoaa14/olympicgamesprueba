@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ainhoa Agirrebengoa",
+    "section": "",
+    "text": "Ut ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Ainhoa Agirrebengoa",
+    "section": "Education",
+    "text": "Education\nUniversity of XYZ, City | Location | Sept 20XX - June 20XX"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Ainhoa Agirrebengoa",
+    "section": "Experience",
+    "text": "Experience\nWorkplace | Job title | April 20XX - present"
+  },
+  {
+    "objectID": "blog/blog.html",
+    "href": "blog/blog.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Project\n\n\nDescription\n\n\nSkills\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Project\n\n\nDescription\n\n\nSkills\n\n\n\n\n\n\nPredicting House Prices with Machine Learning\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection. \n\n\nPython, Machine Learning, Data Cleaning\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments. \n\n\nR, Machine Learning, Clustering, Statistical Modelling\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs. \n\n\nR, Data Visualization, Environmental Science\n\n\n\n\n\nNo matching items"
+  }
+]

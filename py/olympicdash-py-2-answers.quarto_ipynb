@@ -15,7 +15,7 @@
         "logo-alt: \"Olympics logo with multicolored circles.\"\n",
         "---"
       ],
-      "id": "4832f589"
+      "id": "f84b1aaf"
     },
     {
       "cell_type": "code",
@@ -66,7 +66,7 @@
       "source": [
         "# 🌞 Summer Olympics\n"
       ],
-      "id": "6cc47463"
+      "id": "59d4867e"
     },
     {
       "cell_type": "code",
@@ -88,7 +88,7 @@
         "\n",
         "### Row - Medals by sport {height=60%}\n"
       ],
-      "id": "de940a3e"
+      "id": "c5fa23fe"
     },
     {
       "cell_type": "code",
@@ -143,7 +143,7 @@
         "::: {.card title=\"Medals by year\"}\n",
         "Due to World War II, no olympic games were held in 1940 and 1944.\n"
       ],
-      "id": "8e11313b"
+      "id": "7a8c79b0"
     },
     {
       "cell_type": "code",
@@ -188,7 +188,7 @@
         "\n",
         "### Row - Value boxes {height=30%}\n"
       ],
-      "id": "81957c1b"
+      "id": "99d0fc3d"
     },
     {
       "cell_type": "code",
@@ -254,7 +254,7 @@
         "\n",
         "### Row - Tabsets of tables {height=70% .tabset}\n"
       ],
-      "id": "4bff52ce"
+      "id": "43e2428c"
     },
     {
       "cell_type": "code",
@@ -306,7 +306,7 @@
         "::: {.card title=\"Top 30 total medals\"}\n",
         "Teams sorted in descending order of total medals.\n"
       ],
-      "id": "ab2398dd"
+      "id": "92ef9b2b"
     },
     {
       "cell_type": "code",
@@ -333,7 +333,7 @@
         "::: {.card title=\"Bottom 30 total medals\"}\n",
         "Teams sorted in ascending order of total medals.\n"
       ],
-      "id": "2164349a"
+      "id": "3ddf3c12"
     },
     {
       "cell_type": "code",
@@ -359,7 +359,7 @@
         "\n",
         "# ❄️ Winter Olympics\n"
       ],
-      "id": "6bcae20f"
+      "id": "8fdfad36"
     },
     {
       "cell_type": "code",
@@ -381,7 +381,7 @@
         "\n",
         "### Row - Medals by sport {height=60%}\n"
       ],
-      "id": "3cb50a85"
+      "id": "40892ecc"
     },
     {
       "cell_type": "code",
@@ -436,7 +436,7 @@
         "::: {.card title=\"Medals by year\"}\n",
         "Due to World War II, no olympic games were held in 1940 and 1944.\n"
       ],
-      "id": "c398443e"
+      "id": "40977890"
     },
     {
       "cell_type": "code",
@@ -479,7 +479,7 @@
         "\n",
         "### Row - Value boxes {height=30%}\n"
       ],
-      "id": "e5473d19"
+      "id": "01a611c2"
     },
     {
       "cell_type": "code",
@@ -545,7 +545,7 @@
         "\n",
         "### Row - Tabsets of tables {height=70% .tabset}\n"
       ],
-      "id": "d9472725"
+      "id": "c97b633a"
     },
     {
       "cell_type": "code",
@@ -597,7 +597,7 @@
         "::: {.card title=\"Top 30 total medals\"}\n",
         "Teams sorted in descending order of total medals.\n"
       ],
-      "id": "e2e15b51"
+      "id": "83fc2e83"
     },
     {
       "cell_type": "code",
@@ -624,7 +624,7 @@
         "::: {.card title=\"Bottom 30 total medals\"}\n",
         "Teams sorted in ascending order of total medals.\n"
       ],
-      "id": "583bcc10"
+      "id": "5fe4056c"
     },
     {
       "cell_type": "code",
@@ -648,14 +648,15 @@
       "source": [
         ":::"
       ],
-      "id": "7a57b354"
+      "id": "5847c26a"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "display_name": "Python 3",
+      "name": "python3",
       "language": "python",
-      "name": "python3"
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\herramientas-anaconda\\share\\jupyter\\kernels\\python3"
     }
   },
   "nbformat": 4,

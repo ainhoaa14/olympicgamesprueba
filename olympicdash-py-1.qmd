@@ -1,6 +1,6 @@
 ---
 title: "Olympic Games"
-format: html
+format: dashboard
 ---
 
 ```{python}
